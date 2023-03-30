@@ -15,7 +15,7 @@
   import Formulario from './components/Formulario.vue';
 
   export default defineComponent({
-    name: 'App'  ,
+    name: 'App',
     components:{
       BarraLateral,
       Formulario
