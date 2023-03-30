@@ -5,59 +5,24 @@
                 <input type="text" 
                     class="input" 
                     placeholder="Qual tarefa você deseja iniciar ?"/>
-            </div>
-            
+            </div>            
             <div class="column">
-                <div class="is-flex is-align-items-center is-justify-content-space-between">
-                    <section>
-                        <strong> {{ tempoDecorrido }}</strong>
-                    </section>
-                    <button class="button"  @click="iniciar">
-                            <span class="icon">
-                                <i class="fas fa-play"></i>
-                            </span>
-                            <span>play</span>
-                    </button>
-                    <button class="button" @click="finalizar">
-                        <span class="icon">
-                            <i class="fas fa-stop"></i>
-                        </span>
-                        <span>stop</span>
-                    </button>
-                </div>
-                
+                <TemporizadorItem />
             </div>
         </div>
     </div>
 </template>
 
-
 <script lang="ts">
     import { defineComponent } from 'vue';
+    import TemporizadorItem from '../components/Temporizador.vue'
 
     export default defineComponent({
         name: "FomularioItem",
-        data (){
-            return {
-                tempoEmSegundos: 0 
-            }
-        },
-        computed:{
-            tempoDecorrido () : string {
-                return new Date(this.tempoEmSegundos * 1000).toISOString().substr(11,8)
-            }
-        },
-        methods: {
-            iniciar (){
-                setInterval(()=>{
-                    this.tempoEmSegundos += 1;
-                }, 1000)
-                console.log('iniciar');
-            }, 
-            finalizar (){
-                console.log('finalizar');
-            }
+        components:{
+            TemporizadorItem
         }
+       
     })
 
 </script>
