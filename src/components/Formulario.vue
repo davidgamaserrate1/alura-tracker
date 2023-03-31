@@ -38,13 +38,7 @@
                 })       
                 this.descricao = ''
             }
-            // finalizarTarefa (tempoDecorrido: number)  :void{
-            //     this.$emit('aoSalvarTarefa', {          
-            //         duracaoEmSegundos: tempoDecorrido,
-            //         descricao: this.descricao
-            //     })  
-            //     this.descricao = ''
-            // }
+            
         }
        
     })
